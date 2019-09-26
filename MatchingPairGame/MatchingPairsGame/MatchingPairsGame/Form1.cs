@@ -26,36 +26,116 @@ namespace MatchingPairsGame
                 "N", "N","p", "p","x", "x", "9", "9"
             };
 
+        Label firstClicked, secondClicked;
+
     public FormMatchingPairsGame()
         {
             
-         
             InitializeComponent();
             AssignIconsToSquare();
         }
 
-        private void AssignIconsToSquare()
+        private void label_Click(object sender, EventArgs e)
         {
-            foreach (Control control in tableLayoutPanel1.Controls)
+            if (firstClicked != null && secondClicked != null)
+                return;
+
+            Label clickedLabel = sender as Label;
+
+            if (clickedLabel == null)
+                return;
+
+            if (clickedLabel.ForeColor == Color.Black)
+                return;
+
+            if (firstClicked == null)
             {
-                Label iconLabel = control as Label;
-                if (iconLabel != null)
-                {
-                    int randomNumber = random.Next(icons.Count);
-                    iconLabel.Text = icons[randomNumber];
+                firstClicked = clickedLabel;
+                firstClicked.ForeColor = Color.Black;
+                return;
 
-                    iconLabel.ForeColor = iconLabel.BackColor;
-                    icons.RemoveAt(randomNumber);
-
-
-                    };
             }
+
+            secondClicked = clickedLabel;
+            secondClicked.ForeColor = Color.Black;
+
+            CheckForWinner();
+
+
+            if (firstClicked.Text == secondClicked.Text)
+            {
+                firstClicked = null;
+                secondClicked = null;
+            }
+            else
+                timer1.Start();
+
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void CheckForWinner()
         {
+            Label label;
+            for (int i = 0; i < tableLayoutPanel1.Controls.Count; i++)
+            {
+                label = tableLayoutPanel1.Controls[i] as Label;
+                if (label != null && label.ForeColor == label.BackColor)
+                    return;
+            }
 
+            MessageBox.Show("You matched everything, aren't you special?");
+            
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+
+            firstClicked.ForeColor = firstClicked.BackColor;
+            secondClicked.ForeColor = secondClicked.BackColor;
+
+            firstClicked = null;
+            secondClicked = null;
+
+
+        }
+
+        private void AssignIconsToSquare()
+        {
+            Label label;
+            int randomNumber;
+
+          
+                for (int i = 0; i < tableLayoutPanel1.Controls.Count; i++)
+                {
+                    if (tableLayoutPanel1.Controls[i] is Label)
+                    {
+                        randomNumber = random.Next(0, icons.Count);
+                        randomNumber = random.Next(icons.Count);
+                        label = (Label)tableLayoutPanel1.Controls[i];
+                        label.Text = icons[randomNumber];
+                        icons.RemoveAt(randomNumber);
+                    }
+                        
+                    else
+                        continue;
+
+                    
+                                   
+                }
+            
         }
     }
 }
+/*
+{
+
+
+};
+
+
+
+private void Form1_Load(object sender, EventArgs e)
+{
+
+}
+
+*/
