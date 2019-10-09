@@ -33,5 +33,25 @@ namespace ScreenSaverApp
         {
             Close();
         }
+
+        private void formScreenSaver_Load(object sender, EventArgs e)
+        {
+            string[] images = System.IO.Directory.GetFiles("Pics");
+
+            foreach (string image in images)
+            {
+                BGImages.Add(new Bitmap(image));
+            }
+
+            for (int i = 0; i < 50; ++i)
+            {
+                BritPic np = new BritPic();
+                np.PicNum = i % BGImages.Count;
+                np.X = rand.Next(0, Width);
+                np.Y = rand.Next(0, Height);
+
+                BritPics.Add(np);
+            }
+        }
     }
 }
