@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*EC: tips, rename things, 
+  2/3 due next week,
+  4 due week after that*/
+ 
+
 namespace MyMusicPlayer
 {
     public partial class Form1 : Form
