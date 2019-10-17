@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Player = new AxWMPLib.AxWindowsMediaPlayer();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_browse = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -57,19 +57,19 @@
             this.textBox1.Size = new System.Drawing.Size(111, 33);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // button_browse
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkViolet;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(13, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_browse.BackColor = System.Drawing.Color.DarkViolet;
+            this.button_browse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_browse.ForeColor = System.Drawing.Color.White;
+            this.button_browse.Location = new System.Drawing.Point(13, 221);
+            this.button_browse.Name = "button_browse";
+            this.button_browse.Size = new System.Drawing.Size(98, 32);
+            this.button_browse.TabIndex = 2;
+            this.button_browse.Text = "Browse";
+            this.button_browse.UseVisualStyleBackColor = false;
+            this.button_browse.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -142,7 +142,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_browse);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Player);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -160,7 +160,7 @@
 
         private AxWMPLib.AxWindowsMediaPlayer Player;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_browse;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
