@@ -15,6 +15,7 @@ namespace Picture_Viewer
         public Form1()
         {
             InitializeComponent();
+            
         }
     }
 }
