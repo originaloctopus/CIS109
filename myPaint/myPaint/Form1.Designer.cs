@@ -67,13 +67,13 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             // 
             // saveImageAsToolStripMenuItem
             // 
             this.saveImageAsToolStripMenuItem.Name = "saveImageAsToolStripMenuItem";
-            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.saveImageAsToolStripMenuItem.Text = "Save Image As";
             // 
             // toolStrip1
@@ -148,6 +148,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(800, 401);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
