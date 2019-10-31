@@ -31,5 +31,14 @@ namespace myPaint
                 drawing = true;
 
         }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (drawing)
+                drawing = false;
+            else
+                drawing = true;
+
+        }
     }
 }
