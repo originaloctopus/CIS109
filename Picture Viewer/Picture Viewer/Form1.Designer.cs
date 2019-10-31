@@ -79,6 +79,7 @@
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "Stretch";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -101,6 +102,7 @@
             this.closeButton.TabIndex = 0;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // setBackgroundButton
             // 
@@ -111,6 +113,7 @@
             this.setBackgroundButton.TabIndex = 1;
             this.setBackgroundButton.Text = "Set Background Color";
             this.setBackgroundButton.UseVisualStyleBackColor = true;
+            this.setBackgroundButton.Click += new System.EventHandler(this.setBackgroundButton_Click);
             // 
             // clearPicButton
             // 
@@ -121,6 +124,7 @@
             this.clearPicButton.TabIndex = 2;
             this.clearPicButton.Text = "Clear Picture";
             this.clearPicButton.UseVisualStyleBackColor = true;
+            this.clearPicButton.Click += new System.EventHandler(this.clearPicButton_Click);
             // 
             // displayButton
             // 
@@ -131,6 +135,7 @@
             this.displayButton.TabIndex = 3;
             this.displayButton.Text = "Display Picture";
             this.displayButton.UseVisualStyleBackColor = true;
+            this.displayButton.Click += new System.EventHandler(this.displayButton_Click);
             // 
             // openFileDialog1
             // 
@@ -147,6 +152,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Picture Viewer";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
