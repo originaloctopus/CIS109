@@ -40,5 +40,11 @@ namespace WhiskeyTango
         {
             webBrowser1.Navigate(cboLocation.Text);
         }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            //Text refers to the title property of the form
+            Text = "WhiskeyTango - " + webBrowser1.Document.Title;
+        }
     }
 }
