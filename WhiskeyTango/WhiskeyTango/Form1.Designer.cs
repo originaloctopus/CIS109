@@ -1,6 +1,6 @@
-﻿namespace currencyConverter
+﻿namespace WhiskeyTango
 {
-    partial class currencyConvert
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConverter = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // btnConverter
+            // toolStrip1
             // 
-            this.btnConverter.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnConverter.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConverter.Location = new System.Drawing.Point(0, -1);
-            this.btnConverter.Name = "btnConverter";
-            this.btnConverter.Size = new System.Drawing.Size(788, 53);
-            this.btnConverter.TabIndex = 0;
-            this.btnConverter.Text = "Currency Converter";
-            this.btnConverter.UseVisualStyleBackColor = false;
-            this.btnConverter.Click += new System.EventHandler(this.btnConverter_Click);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(0, 58);
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 25);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(539, 384);
+            this.webBrowser1.Size = new System.Drawing.Size(800, 425);
             this.webBrowser1.TabIndex = 1;
             // 
-            // currencyConvert
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.btnConverter);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "currencyConvert";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Earth Currency Converter";
+            this.Controls.Add(this.toolStrip1);
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnConverter;
+        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
