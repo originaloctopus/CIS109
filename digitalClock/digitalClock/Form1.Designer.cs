@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hourMinute = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.hourMinuteLabel = new System.Windows.Forms.Label();
             this.secondsLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.weekDayLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // hourMinute
+            // hourMinuteLabel
             // 
-            this.hourMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hourMinute.ForeColor = System.Drawing.Color.White;
-            this.hourMinute.Location = new System.Drawing.Point(12, 103);
-            this.hourMinute.Name = "hourMinute";
-            this.hourMinute.Size = new System.Drawing.Size(239, 78);
-            this.hourMinute.TabIndex = 0;
-            this.hourMinute.Text = "19 : 25";
+            this.hourMinuteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hourMinuteLabel.ForeColor = System.Drawing.Color.White;
+            this.hourMinuteLabel.Location = new System.Drawing.Point(12, 103);
+            this.hourMinuteLabel.Name = "hourMinuteLabel";
+            this.hourMinuteLabel.Size = new System.Drawing.Size(239, 78);
+            this.hourMinuteLabel.TabIndex = 0;
+            this.hourMinuteLabel.Text = "19 : 25";
             // 
             // secondsLabel
             // 
@@ -74,6 +76,10 @@
             this.weekDayLabel.TabIndex = 3;
             this.weekDayLabel.Text = "Wednesday";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,19 +90,21 @@
             this.Controls.Add(this.weekDayLabel);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.secondsLabel);
-            this.Controls.Add(this.hourMinute);
+            this.Controls.Add(this.hourMinuteLabel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label hourMinute;
+        private System.Windows.Forms.Label hourMinuteLabel;
         private System.Windows.Forms.Label secondsLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label weekDayLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
