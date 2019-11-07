@@ -10,11 +10,35 @@ using System.Windows.Forms;
 
 namespace WhiskeyTango
 {
-    public partial class Form1 : Form
+    public partial class formMain : Form
     {
-        public Form1()
+        public formMain()
         {
             InitializeComponent();
+        }
+
+        private void cboLocation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                webBrowser1.Navigate(cboLocation.Text);
+            }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoBack();
+        }
+
+        private void buttonForward_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoForward();
+        }
+
+        private void buttonGo_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(cboLocation.Text);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WhiskeyTango
 {
-    partial class Form1
+    partial class formMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.buttonBack = new System.Windows.Forms.ToolStripButton();
+            this.buttonForward = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cboLocation = new System.Windows.Forms.ToolStripComboBox();
+            this.buttonGo = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonBack,
+            this.buttonForward,
+            this.toolStripSeparator1,
+            this.cboLocation,
+            this.buttonGo});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -49,15 +62,58 @@
             this.webBrowser1.Size = new System.Drawing.Size(800, 425);
             this.webBrowser1.TabIndex = 1;
             // 
-            // Form1
+            // buttonBack
+            // 
+            this.buttonBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buttonBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonBack.Image")));
+            this.buttonBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(36, 22);
+            this.buttonBack.Text = "Back";
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonForward
+            // 
+            this.buttonForward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buttonForward.Image = ((System.Drawing.Image)(resources.GetObject("buttonForward.Image")));
+            this.buttonForward.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonForward.Name = "buttonForward";
+            this.buttonForward.Size = new System.Drawing.Size(54, 22);
+            this.buttonForward.Text = "Forward";
+            this.buttonForward.Click += new System.EventHandler(this.buttonForward_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cboLocation
+            // 
+            this.cboLocation.Name = "cboLocation";
+            this.cboLocation.Size = new System.Drawing.Size(121, 25);
+            this.cboLocation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboLocation_KeyDown);
+            // 
+            // buttonGo
+            // 
+            this.buttonGo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buttonGo.Image = ((System.Drawing.Image)(resources.GetObject("buttonGo.Image")));
+            this.buttonGo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.buttonGo.Name = "buttonGo";
+            this.buttonGo.Size = new System.Drawing.Size(26, 22);
+            this.buttonGo.Text = "Go";
+            this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
+            // 
+            // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "formMain";
+            this.Text = "WhiskeyTango";
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,6 +123,11 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ToolStripButton buttonBack;
+        private System.Windows.Forms.ToolStripButton buttonForward;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripComboBox cboLocation;
+        private System.Windows.Forms.ToolStripButton buttonGo;
     }
 }
 
