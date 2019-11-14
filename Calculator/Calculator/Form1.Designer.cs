@@ -95,7 +95,7 @@
             this.button_Equals.TabIndex = 0;
             this.button_Equals.Text = "=";
             this.button_Equals.UseVisualStyleBackColor = false;
-            this.button_Equals.Click += new System.EventHandler(this.click_button);
+            this.button_Equals.Click += new System.EventHandler(this.button_Equals_Click);
             // 
             // button_1
             // 

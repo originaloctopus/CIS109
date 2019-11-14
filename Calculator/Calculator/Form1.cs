@@ -12,7 +12,7 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        Double resultValue = 0;
+        Double resultValue;
         string operator_Clicked = "";
 
         public Form1()
@@ -35,6 +35,29 @@ namespace Calculator
             Button button = (Button)sender;
             operator_Clicked = button.Text;
             resultValue = Double.Parse(resultValue.Text);
+        }
+
+        private void button_Equals_Click(object sender, EventArgs e)
+        {
+            switch (operator_Clicked)
+            {
+                case "+":
+                    result_Box.Text = (resultValue + Double.Parse(result_Box.Text)).ToString();
+                    break;
+                case "-":
+                    result_Box.Text = (resultValue - Double.Parse(result_Box.Text)).ToString();
+                    break;
+                case "x":
+                    result_Box.Text = (resultValue * Double.Parse(result_Box.Text)).ToString();
+                    break;
+                case "/":
+                    result_Box.Text = (resultValue / Double.Parse(result_Box.Text)).ToString();
+                    break;
+                default:
+                    break;
+
+
+            }
         }
     }
 }
