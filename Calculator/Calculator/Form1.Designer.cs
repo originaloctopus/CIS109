@@ -264,6 +264,7 @@
             this.button_Clear.TabIndex = 0;
             this.button_Clear.Text = "Clear";
             this.button_Clear.UseVisualStyleBackColor = false;
+            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
             // Form1
             // 

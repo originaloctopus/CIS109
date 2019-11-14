@@ -14,6 +14,7 @@ namespace Calculator
     {
         Double resultValue;
         string operator_Clicked = "";
+        bool is_Operator_Clicked = false;
 
         public Form1()
         {
@@ -22,19 +23,46 @@ namespace Calculator
 
         private void click_button(object sender, EventArgs e)
         {
-            if (result_Box.Text == "0")
+            if (result_Box.Text == "0" || (is_Operator_Clicked))
                 result_Box.Clear();
 
-
+            is_Operator_Clicked = false;
             Button button = (Button)sender;
-            result_Box.Text = result_Box.Text + button.Text;
+            if (button.Text == ".")
+            {
+                if (!result_Box.Text.Contains("."))
+                    result_Box.Text = result_Box.Text + button.Text;
+            }
+            else
+            {
+                result_Box.Text = result_Box.Text + button.Text;
+            }
+            
         }
 
         private void operator_click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            operator_Clicked = button.Text;
-            resultValue = Double.Parse(resultValue.Text);
+            if (resultValue != 0)
+            {
+                button_Equals.PerformClick();
+                operator_Clicked = button.Text;
+                is_Operator_Clicked = true;
+            }
+            else
+            {
+                operator_Clicked = button.Text;
+                resultValue = Double.Parse(result_Box.Text);
+                is_Operator_Clicked = true;
+            }
+
+        }
+
+
+        private void button_Clear_Click(object sender, EventArgs e)
+        {
+            result_Box.Text = "0";
+            resultValue = 0;
         }
 
         private void button_Equals_Click(object sender, EventArgs e)
@@ -47,10 +75,10 @@ namespace Calculator
                 case "-":
                     result_Box.Text = (resultValue - Double.Parse(result_Box.Text)).ToString();
                     break;
-                case "x":
+                case "×":
                     result_Box.Text = (resultValue * Double.Parse(result_Box.Text)).ToString();
                     break;
-                case "/":
+                case "÷":
                     result_Box.Text = (resultValue / Double.Parse(result_Box.Text)).ToString();
                     break;
                 default:
@@ -59,5 +87,6 @@ namespace Calculator
 
             }
         }
+
     }
 }
